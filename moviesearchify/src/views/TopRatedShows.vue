@@ -62,14 +62,8 @@
       },
       sortBy(prop) {
         console.log(prop);
-        if (prop === "popularity") {
-          this.sortCriteria = "Most Popular";
-        } else if (prop === "vote_average") {
+        if (prop === "vote_average") {
           this.sortCriteria = "Highest Rated";
-        } else if (prop === "release_date") {
-          //release_date for shows is called first_air_date
-          prop = "first_air_date";
-          this.sortCriteria = "Release Date";
         }
         this.sortedBy = prop;
         this.shows.sort((a, b) => (a[prop] > b[prop] ? -1 : 1));
