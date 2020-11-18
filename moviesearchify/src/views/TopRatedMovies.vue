@@ -18,6 +18,7 @@
   import axios from "axios";
   import MediaGrid from "../components/MediaGrid.vue";
   import MediaNav from "../components/MediaNav.vue";
+  import Constants from "../constant.js";
 
   export default {
     components: {
@@ -41,7 +42,7 @@
         const options = {  headers: {'Access-Control-Allow-Origin': '*'}};
         axios
           .get(
-            "https://localhost:44366/api/Movies"
+            Constants.API_BASE_LINK + "api/Movies"
           )
           .then(response => {
             // handle success
